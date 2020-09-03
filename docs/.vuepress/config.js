@@ -84,7 +84,35 @@ module.exports = {
         ],
 
         // 侧边栏
-        sidebar: 'auto'
+        sidebar: {
+            // 关于
+            '/关于':[{
+                title: "我写我自己",
+                collapsable: true,
+                children:[
+                    ['/关于', '关于']
+                ]
+            }],
+            // 生活积累
+            '/0-life/basketball/':[{
+                title: "THIS IS WHY WE PLAY",
+                collapsable: true,
+                children:[
+                    ['1-day1', '球性计划-day1']
+                ]
+            }],
+            '/3-java-extends/中间件/SpringBoot2.0集成Activiti6/':[
+                '1-springboot-activit-star',
+                '2-activiti-context',
+                '3-springboot-activiti-create',
+                '4-springboot-activiti-ui'
+            ],
+            '/3-java-extends/中间件/RabbitMQ消息中间件/':[
+                '1-RabbitMQ-setup',
+                '2-RabbitMQ-context',
+                '3-RabbitMQ-SpringBoot'
+            ]
+        }
     }
 }
 
@@ -117,44 +145,7 @@ module.exports = {
 
 
 
-// {
-//     // 关于自己的内容
-//     '/关于':[{
-//         title: "我写我自己",
-//         collapsable: true,
-//         children:[
-//             ['/关于', '关于']
-//         ]
-//     }],
-//     // 生活积累
-//     '/0-life/basketball':[{
-//         title: "THIS IS WHY WE PLAY",
-//         collapsable: true,
-//         children:[
-//             ['/1-day1', '球性计划-day1']
-//         ]
-//     }],
-//     '/2-java-spring/Spring/SpringBoot/SpringBoot2.0集成Activiti6':[{
-//         title: "SpringBoot2.0集成Activiti6",
-//         collapsable: true,
-//         children:[
-//             ['/Spring/SpringBoot/SpringBoot2.0集成Activiti6/1-springboot-activit-star', '1，开始配置'],
-//             ['/Spring/SpringBoot/SpringBoot2.0集成Activiti6/2-activiti-context', '2，Activiti内容'],
-//             ['/Spring/SpringBoot/SpringBoot2.0集成Activiti6/3-springboot-activiti-create', '3，创建流程文件(BPMN)'],
-//             ['/Spring/SpringBoot/SpringBoot2.0集成Activiti6/4-springboot-activiti-ui', '4，整合官方在线设计器']
-//         ]
-//     }],
-//     '/3-java-extends/中间件/RabbitMQ消息中间件':[{
-//         title: "RabbitMQ消息中间件",
-//         collapsable: true,
-//         children:[
-//             ['/中间件/RabbitMQ消息中间件/1-RabbitMQ-setup', '1，RabbitMQ安装'],
-//             ['/中间件/RabbitMQ消息中间件/2-RabbitMQ-context', '2，RabbitMQ介绍'],
-//             ['/中间件/RabbitMQ消息中间件/3-RabbitMQ-SpringBoot', '3，SpringBoot整合MQ']
-//         ]
-//     }],
-   
-// }
+
 
 
 
