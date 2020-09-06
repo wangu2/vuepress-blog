@@ -21,11 +21,11 @@ src/main/rescource/processes
 
 ### 开始绘制简单流程
 
-<img src="/img/image-20200703192806418.png" alt="image-20200703192806418" style="zoom:200%;" />
+![](/img/image-20200703192806418.png)
 
 ### 流程模块属性
 
-<img src="/img/image-20200703192659001.png" alt="image-20200703192659001" style="zoom: 200%;" />
+![](/img/image-20200703192659001.png)
 
 ## 乱码问题
 

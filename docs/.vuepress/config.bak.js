@@ -3,12 +3,16 @@
 
 module.exports = {
 
+    base: '',
+
     // 基础配置
     title: 'YOU CAN DO IT @ WANGU',
     head: [
         ['link', { rel: 'icon', href: `/favicon.ico` }]
     ],
     dest: './docs/.vuepress/dist',
+    ga: '',
+    evergreen: true,
 
     // plugins
     plugins: {
@@ -17,11 +21,10 @@ module.exports = {
             // medium-zoom options here
             // See: https://github.com/francoischalifour/medium-zoom#options
             options: {
-                margin: 150
+                margin: 16
             }
         }
     },
-
 
     // markdown
     markdown: {
@@ -40,54 +43,60 @@ module.exports = {
         nav : [
             { 
                 text: 'Java',
+                link: '/',
                 items:[
-                    { text: '//TODO Java 面向对象基础', link: '/#1' }
+                    { text: '//TODO Java 面向对象基础', link: '/' }
                 ]
             },{ 
                 text: 'Java Spring', 
+                link: '/',
                 items:[{ 
                     text: '编辑器', 
-
+                    link: '/',
                     items:[
-                        { text: '//TODO IntelliJ IDEA', link: '/#2' }
+                        { text: '//TODO IntelliJ IDEA', link: '/' }
                     ]
                 },{
                     text: 'Spring Boot', 
-
+                    link: '/',
                     items:[
                         { text: 'Spring Boot - 多模块项目创建', link: '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/1-idea-create-springboot' },
-                        { text: '//TODO Spring Boot - Helloword', link: '/#3' },
-                        { text: '//TODO Spring Boot - 多配置文件', link: '/#4' },
-                        { text: '//TODO Spring Boot - LogBack日志配置', link: '/#5' },
-                        { text: '//TODO Spring Boot - Swagger UI', link: '/#6' }
+                        { text: '//TODO Spring Boot - Helloword', link: '/' },
+                        { text: '//TODO Spring Boot - 多配置文件', link: '/' },
+                        { text: '//TODO Spring Boot - LogBack日志配置', link: '/' },
+                        { text: '//TODO Spring Boot - Swagger UI', link: '/' }
                     ]
                 },{
                     text: 'Spring Security', 
+                    link: '/',
                     items:[
-                        { text: '//TODO 初始化', link: '/#7' },
+                        { text: '//TODO 初始化', link: '/' },
                     ]
                 }]
             },{ 
                 text: 'Java 集成、中间件', 
+                link: '/',
                 items:[
                     { text: 'RabbitMQ 消息队列', link: '/3-java-extends/中间件/RabbitMQ消息中间件/1-RabbitMQ-setup' },
                     { text: 'Activiti6 工作流引擎', link: '/3-java-extends/中间件/SpringBoot2.0集成Activiti6/1-springboot-activit-star' },
-                    { text: '//TODO Shardingsphere 分库分表', link: '/#8' },
-                    { text: '//TODO Mybaits-Plus ORM 数据持久', link: '/#9' },
-                    { text: '//TODO Druid 连接池', link: '/#10' }
+                    { text: '//TODO Shardingsphere 分库分表', link: '/' },
+                    { text: '//TODO Mybaits-Plus ORM 数据持久', link: '/' },
+                    { text: '//TODO Druid 连接池', link: '/' }
                 ]
             },{ 
                 text: '翻过这座山', 
+                link: '/',
                 items:[{ 
                     text: '第一阶段', 
-
+                    link: '/',
                     items:[{
                         text: '//TODO 持久层框架设计实现及MyBatis源码分析',
-                        link: '/#11'
+                        link: '/'
                     }]
                 }]
             },{ 
                 text: '🏀', 
+                link: '/',
                 items:[{
                     text: '球性计划-day1',
                     link: '/0-life/basketball/1-day1'
