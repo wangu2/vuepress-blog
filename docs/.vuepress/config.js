@@ -11,8 +11,20 @@ module.exports = {
     dest: './docs/.vuepress/dist',
 
     // plugins
-    plugins: [
-        '@vuepress/medium-zoom', '@vuepress/back-to-top'
+    plugins:[
+        ['@vuepress/medium-zoom', true],
+        ['@vuepress/back-to-top', true],
+        ['@vuepress/active-header-link', true],
+        ['@vssue/vuepress-plugin-vssue', {
+            platform: 'github',
+
+            owner: 'wangu2',
+            repo: 'vuepress-blog',
+            clientId: 'bdd03846aeb849baa443',
+            clientSecret: 'a8594968bd4186ceac5810e4f8331e5986410ed0',
+
+            locale:'zh'
+        }]
     ],
 
     // markdown

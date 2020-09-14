@@ -18,7 +18,7 @@
 1. 解压War包 activiti-explorer.war （在线设计源码）
 2. 将包解压内 diagram-viewer、editor-app、modeler.html 放入SpringBoot静态资源内以直接访问
 
-<img src="/img/image-20200705233655122.png" alt="image-20200705233655122" style="zoom:90%;" />
+![image-20200705233655122](/img/image-20200705233655122.png)
 
 ## 设计器后台源码 
 

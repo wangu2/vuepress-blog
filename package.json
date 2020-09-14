@@ -1,0 +1,34 @@
+{
+  "name": "vuepress",
+  "version": "1.0.0",
+  "description": "by lee",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.5.4"
+  },
+  "devDependencies": {
+    "@vssue/api-github-v3": "^1.4.4",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6",
+    "@vuepress/plugin-active-header-links": "^1.5.4",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "@vuepress/plugin-medium-zoom": "^1.5.4",
+    "vuepress": "^1.5.4"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "deploy.bat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangu2/vuepress-blog.git"
+  },
+  "author": "lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangu2/vuepress-blog/issues"
+  },
+  "homepage": "https://github.com/wangu2/vuepress-blog#readme"
+}

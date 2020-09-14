@@ -26,9 +26,9 @@ RabbitMQ安装后是作为Windows Service服务在后台运行，安装完毕后
 
 配置环境变量，追加至Path变量内
 
-<img src="/img/image-20200729111106920.png" alt="image-20200729111106920"  />
+![image-20200729110817584](/img/image-20200729111106920.png)
 
-<img src="/img/image-20200729111336153.png" alt="image-20200729111336153"  />
+![image-20200729111336153](/img/image-20200729111336153.png)
 
 ## 配置RabbitMQ
 
@@ -112,11 +112,11 @@ rabbitmq-service start
 
 在 [ Add a user ] 选项卡中填写用户基本信息，填写完毕后在列表中点击刚才添加的用户 test
 
-<img src="/img/image-20200730114918260.png" alt="image-20200730114918260" style="zoom:150%;" />
+![image-20200730114918260](/img/image-20200730114918260.png)
 
 赋予 test 相关的权限内容
 
-<img src="/img/image-20200730115013417.png" alt="image-20200730115013417" style="zoom:150%;" />
+![image-20200730115013417](/img/image-20200730115013417.png)
 
 然后重新使用 test 即可进行重新登录
 
