@@ -93,7 +93,7 @@ module.exports = {
             },{ 
                 text: '🏀', 
                 items:[{
-                    text: '球性计划-day1',
+                    text: '球性训练计划',
                     link: '/0-life/basketball/1-day1'
                 }]
             },{ 
@@ -117,7 +117,8 @@ module.exports = {
                 title: "THIS IS WHY WE PLAY",
                 collapsable: true,
                 children:[
-                    ['1-day1', '球性计划-day1']
+                    ['1-day1', '球性计划-day1'],
+                    ['1-day2', '球性计划-day2']
                 ]
             }],
             '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/':[
