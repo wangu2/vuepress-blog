@@ -11,17 +11,9 @@ module.exports = {
     dest: './docs/.vuepress/dist',
 
     // plugins
-    plugins: {
-        '@vuepress/medium-zoom': {
-            selector: 'img',
-            // medium-zoom options here
-            // See: https://github.com/francoischalifour/medium-zoom#options
-            options: {
-                margin: 150
-            }
-        }
-    },
-
+    plugins: [
+        '@vuepress/medium-zoom', '@vuepress/back-to-top'
+    ],
 
     // markdown
     markdown: {
