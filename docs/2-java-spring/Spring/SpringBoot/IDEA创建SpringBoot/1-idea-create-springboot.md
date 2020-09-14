@@ -7,12 +7,10 @@
 
 ## 初始化项目
 
-::: tip  选择
 
-方式1: 在 IDEA 启动页选择 **Create New Project**
-
-方式2: 打开 IDEA 工具栏 **File -> New -> Project**
-:::
+>方式1: 在 IDEA 启动页选择 **Create New Project**
+>
+>方式2: 打开 IDEA 工具栏 **File -> New -> Project**
 
 ![image-20200903202324285](/img/image-20200903202324285.png)
 
