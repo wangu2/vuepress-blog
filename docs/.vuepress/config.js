@@ -17,12 +17,10 @@ module.exports = {
         ['@vuepress/active-header-link', true],
         ['@vssue/vuepress-plugin-vssue', {
             platform: 'github',
-
             owner: 'wangu2',
             repo: 'vuepress-blog',
             clientId: 'bdd03846aeb849baa443',
             clientSecret: 'a8594968bd4186ceac5810e4f8331e5986410ed0',
-
             locale:'zh'
         }]
     ],
@@ -72,7 +70,7 @@ module.exports = {
                     ]
                 }]
             },{ 
-                text: 'Java 集成、中间件', 
+                text: '集成中间件', 
                 items:[
                     { text: 'RabbitMQ 消息队列', link: '/3-java-extends/中间件/RabbitMQ消息中间件/1-RabbitMQ-setup' },
                     { text: 'Activiti6 工作流引擎', link: '/3-java-extends/中间件/SpringBoot2.0集成Activiti6/1-springboot-activit-star' },
