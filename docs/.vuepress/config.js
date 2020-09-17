@@ -41,9 +41,9 @@ module.exports = {
         // 导航
         nav : [
             { 
-                text: 'Java',
+                text: '基本的',
                 items:[
-                    { text: '//TODO Java 面向对象基础', link: '/#1' }
+                    { text: 'Java 基础', link: '/1-base/java/java-oop' }
                 ]
             },{ 
                 text: 'Java Spring', 
@@ -79,15 +79,11 @@ module.exports = {
                     { text: '//TODO Druid 连接池', link: '/#10' }
                 ]
             },{ 
-                text: '翻过这座山', 
-                items:[{ 
-                    text: '第一阶段', 
-
-                    items:[{
-                        text: '//TODO 持久层框架设计实现及MyBatis源码分析',
-                        link: '/#11'
-                    }]
-                }]
+                text: '翻过这座山',
+                link: '/#'
+            },{ 
+                text: '在读书单',
+                link: '/#'
             },{ 
                 text: '🏀', 
                 items:[{
@@ -117,6 +113,13 @@ module.exports = {
                 children:[
                     ['1-day1', '球性计划-day1'],
                     ['1-day2', '球性计划-day2']
+                ]
+            }],
+            '/1-base/java/':[{
+                title: 'Java 基础',
+                collapsable: true,
+                children:[
+                    'java-oop'
                 ]
             }],
             '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/':[
