@@ -117,9 +117,11 @@ module.exports = {
             }],
             '/1-base/java/':[{
                 title: 'Java 基础',
-                collapsable: true,
+                collapsable: false,
+                sidebarDepth:0,
                 children:[
-                    'java-oop'
+                    'java-oop',
+                    'java-abc-interface'
                 ]
             }],
             '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/':[
