@@ -164,7 +164,7 @@ public abstract class FruitPlus extends Fruit implements FruitFun {
 ```
 
 ::: details 思考
-接口增强了类的扩展
+接口增强了类的扩展，根据业务的变化可以实现多个接口。
 :::
 
 ### 区别
