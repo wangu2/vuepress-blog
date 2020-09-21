@@ -123,6 +123,11 @@ module.exports = {
                     'java-oop',
                     'java-abc-interface'
                 ]
+            },{
+                title: '设计模式',
+                collapsable: false,
+                sidebarDepth:0,
+                children:[]
             }],
             '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/':[
                 '1-idea-create-springboot'
