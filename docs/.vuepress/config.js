@@ -80,7 +80,10 @@ module.exports = {
                 ]
             },{ 
                 text: '翻过这座山',
-                link: '/#'
+                items:[
+                    { text: '1.1.持久层框架设计实现及MyBatis源码分析', link: '/5-up/第一阶段/1-Mybaits源码解析' },
+                    { text: '1.2.IoC容器设计实现及Spring源码分析', link: '/5-up/第一阶段/2-IoC容器设计及Spring源码' }
+                ]
             },{ 
                 text: '在读书单',
                 link: '/#'
@@ -142,6 +145,10 @@ module.exports = {
                 '1-RabbitMQ-setup',
                 '2-RabbitMQ-context',
                 '3-RabbitMQ-SpringBoot'
+            ],
+            '/5-up/第一阶段/':[
+                '1-Mybaits源码解析',
+                '2-IoC容器设计及Spring源码'
             ]
         }
     }
