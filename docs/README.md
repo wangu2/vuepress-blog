@@ -7,7 +7,7 @@ actionText: 开始攀爬 →
 actionLink: /
 features:
 - title: 学习
-  details: 扩充自身技术栈容量
+  details: 持续的学习才是根本
 - title: 思考
   details: 思考问题并且追根求源
 - title: 未知

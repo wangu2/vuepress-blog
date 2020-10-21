@@ -49,13 +49,11 @@ module.exports = {
                 text: 'Java Spring', 
                 items:[{ 
                     text: '编辑器', 
-
                     items:[
                         { text: '//TODO IntelliJ IDEA', link: '/#2' }
                     ]
                 },{
                     text: 'Spring Boot', 
-
                     items:[
                         { text: 'Spring Boot - 多模块项目创建', link: '/2-java-spring/Spring/SpringBoot/IDEA创建SpringBoot/1-idea-create-springboot' },
                         { text: '//TODO Spring Boot - Helloword', link: '/#3' },
@@ -70,7 +68,7 @@ module.exports = {
                     ]
                 }]
             },{ 
-                text: '集成中间件', 
+                text: '中间件', 
                 items:[
                     { text: 'RabbitMQ 消息队列', link: '/3-java-extends/中间件/RabbitMQ消息中间件/1-RabbitMQ-setup' },
                     { text: 'Activiti6 工作流引擎', link: '/3-java-extends/中间件/SpringBoot2.0集成Activiti6/1-springboot-activit-star' },
@@ -85,8 +83,10 @@ module.exports = {
                     { text: '1.2.IoC容器设计实现及Spring源码分析', link: '/5-up/第一阶段/2-IoC容器设计及Spring源码' }
                 ]
             },{ 
-                text: '在读书单',
-                link: '/#'
+                text: '工具',
+                items:[
+                    { text: '搭建 OpenVPN', link: '/6-tools/1-搭建-OpenVPN' }
+                ]
             },{ 
                 text: '🏀', 
                 items:[{
@@ -149,6 +149,9 @@ module.exports = {
             '/5-up/第一阶段/':[
                 '1-Mybaits源码解析',
                 '2-IoC容器设计及Spring源码'
+            ],
+            '/6-tools/':[
+                '1-搭建-OpenVPN'
             ]
         }
     }
