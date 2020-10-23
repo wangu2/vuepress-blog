@@ -151,7 +151,8 @@ module.exports = {
                 '2-IoC容器设计及Spring源码'
             ],
             '/6-tools/':[
-                '1-搭建-OpenVPN'
+                '1-搭建-OpenVPN',
+                '2-配置-OpenVPN密码认证'
             ]
         }
     }
