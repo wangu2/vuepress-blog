@@ -6,7 +6,8 @@
     "doc": "docs"
   },
   "dependencies": {
-    "vuepress": "^1.5.4"
+    "vuepress": "^1.5.4",
+    "vuepress-plugin-export": "^0.2.0"
   },
   "devDependencies": {
     "@vssue/api-github-v3": "^1.4.4",

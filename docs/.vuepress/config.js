@@ -12,6 +12,7 @@ module.exports = {
 
     // plugins
     plugins:[
+        ['@vuepress-plugin-export', true],
         ['@vuepress/medium-zoom', true],
         ['@vuepress/back-to-top', true],
         ['@vuepress/active-header-link', true],

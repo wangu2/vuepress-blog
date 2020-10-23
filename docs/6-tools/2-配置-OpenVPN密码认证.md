@@ -54,8 +54,6 @@ checkpsw.sh、psw-file
 auth-user-pass-verify /root/tools/openvpn-server/checkpsw.sh via-env
 # 使用客户端提供的用户名作为common name
 username-as-common-name
-# 不要求客户端提供证书
-verify-client-cert none
 # 脚本运行级别为3，否则无法认证用户名密码
 script-security 3
 ```
