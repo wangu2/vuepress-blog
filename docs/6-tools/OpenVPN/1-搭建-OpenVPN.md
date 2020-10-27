@@ -24,7 +24,7 @@ wget http://oss.aliyuncs.com/aliyunecs/openvpn-2.2.2.tar.gz
 tar -zxvf openvpn-2.2.2.tar.gz
 ```
 
-### 编译、安装`
+### 编译、安装
 ```shell
 cd openvpn-2.2.2
 ./configure                     # 配置
@@ -231,7 +231,7 @@ ps -ef | grep openvpn
 Windows 环境，首先下载客户端 [OpenVPN Client](https://www.techspot.com/downloads/5182-openvpn.html)。<br/>
 
 1. 将服务器 ```/root/tools/openvpn-server``` 目录下的 ```client.key、client.csr、client.crt、ca.crt``` <br/>
-2. 下载到 ```F:\Tools\OpenVPN``` (我本地安装目录) <br/>
+2. 下载(FTP)到 ```F:\Tools\OpenVPN``` (我本地安装目录) <br/>
 3. 创建 ```client.ovpn``` 文件，配置如下（修改 IP & cert & key 名称）
 
 

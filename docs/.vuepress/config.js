@@ -85,7 +85,8 @@ module.exports = {
             },{ 
                 text: '工具',
                 items:[
-                    { text: '搭建 OpenVPN', link: '/6-tools/1-搭建-OpenVPN' }
+                    { text: '集', link: '/6-tools/0-小工具集合' },
+                    { text: '搭建 OpenVPN', link: '/6-tools/OpenVPN/1-搭建-OpenVPN' }
                 ]
             },{ 
                 text: '🏀', 
@@ -150,7 +151,7 @@ module.exports = {
                 '1-Mybaits源码解析',
                 '2-IoC容器设计及Spring源码'
             ],
-            '/6-tools/':[
+            '/6-tools/OpenVPN/':[
                 '1-搭建-OpenVPN',
                 '2-配置-OpenVPN密码认证'
             ]
