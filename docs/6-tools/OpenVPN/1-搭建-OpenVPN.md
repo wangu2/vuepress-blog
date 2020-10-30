@@ -204,7 +204,7 @@ service iptables restart
 ```
 ::: warning 重要: 防火墙一定要开启后再进行上述配置操作
 **10.8.0.0/24 为VPN分配的网段** <br/>
-**172.16.189.224 为当前 OpenVPN Server 安装的服务器地址**
+**172.19.89.134 为当前 OpenVPN Server 安装的服务器 172.19 地址地址私有 ip**
 :::
 
 ### 开启内部 IPv4 路由转发
@@ -220,7 +220,7 @@ sysctl -p                   # 使配置立即生效
 ## 启动 OpenVPN Server
 ```shell
 # 选择配置文件并以后台方式运行
-/usr/local/sbin/openvpn --config /root/tools/openvpn-server server.conf &
+/usr/local/sbin/openvpn --config /root/tools/openvpn-server/server.conf &
 
 # 查看状态
 ps -ef | grep openvpn
@@ -307,14 +307,14 @@ IPv4 路由表
 ### 查看网络状态
 **使用网络追踪命令 tracert，查看网络状态**
 
-在 OpenVPN 连接状态下，追踪一下 ```172.19.89.134``` ( 此 IP 为 OpenVPN Server 所在子网里另外一台机器 )
+在 OpenVPN 连接状态下，追踪一下 ```172.19.89.132``` ( 此 IP 为 OpenVPN Server 所在子网里另外一台机器 )
 
 ```shell
-> tracert -d 172.19.89.134
+> tracert -d 172.19.89.132
 
-通过最多 30 个跃点跟踪到 172.19.89.134 的路由
+通过最多 30 个跃点跟踪到 172.19.89.132 的路由
 
-  1    13 ms    12 ms    12 ms  172.19.89.134
+  1    13 ms    12 ms    12 ms  172.19.89.132
 
 跟踪完成。
 ```
@@ -325,3 +325,26 @@ IPv4 路由表
 > tracert 或 ping 一直超时则代表有问题 :thinking:
 > 
 > 我在安装时遇到这个问题，是因为防火墙未开启内部路由无法转发造成的。( 如何开启参考上述章节即可 )
+
+
+## 可能存在的问题
+> VPN运行正常也分配了IP, 但无法访问其他子网ECS
+
+可能你安装的是iptabels，而实际要安装的是iptables-services
+
+``` shell
+yum install -y iptables-services      # 安装 iptables-service
+systemctl enable iptables             # iptables 启用
+iptables -F                           # iptables 清除规则 
+service iptables save                 # iptables 保存
+service iptables restart              # iptables 重启
+```
+
+因为上述清除了规则，需要重新进行添加 iptables 规则
+
+**172.19.89.134 为当前 OpenVPN Server 安装的服务器 172.19 地址地址私有 ip**
+
+``` shell
+# 配置nat表将vpn网段IP转发到server内网，这很重要
+iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source 172.19.89.134
+```
