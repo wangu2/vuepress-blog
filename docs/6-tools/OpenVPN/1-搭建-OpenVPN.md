@@ -134,9 +134,13 @@ duplicate-cn
 ## 配置 iptables
 ### 配置 iptables 前，确保 iptables 已经开启否则无效
 ```shell
-yum install iptables-services
+yum install -y iptables-services        # 安装 iptables-service
 
-systemctl status iptables
+systemctl enable iptables               # iptables 启用
+iptables -F                             # iptables 清除规则 
+service iptables save                   # iptables 保存
+service iptables restart                # iptables 重启
+
 systemctl list-unit-files | grep iptables
 ```
 
@@ -325,26 +329,3 @@ IPv4 路由表
 > tracert 或 ping 一直超时则代表有问题 :thinking:
 > 
 > 我在安装时遇到这个问题，是因为防火墙未开启内部路由无法转发造成的。( 如何开启参考上述章节即可 )
-
-
-## 可能存在的问题
-> VPN运行正常也分配了IP, 但无法访问其他子网ECS
-
-可能你安装的是iptabels，而实际要安装的是iptables-services
-
-``` shell
-yum install -y iptables-services      # 安装 iptables-service
-systemctl enable iptables             # iptables 启用
-iptables -F                           # iptables 清除规则 
-service iptables save                 # iptables 保存
-service iptables restart              # iptables 重启
-```
-
-因为上述清除了规则，需要重新进行添加 iptables 规则
-
-**172.19.89.134 为当前 OpenVPN Server 安装的服务器 172.19 地址地址私有 ip**
-
-``` shell
-# 配置nat表将vpn网段IP转发到server内网，这很重要
-iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source 172.19.89.134
-```
