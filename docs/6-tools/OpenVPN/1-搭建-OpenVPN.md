@@ -24,6 +24,13 @@ wget http://oss.aliyuncs.com/aliyunecs/openvpn-2.2.2.tar.gz
 tar -zxvf openvpn-2.2.2.tar.gz
 ```
 
+### 安装依赖
+```shell
+yum install -y lzo lzo-devel openssl openssl-devel pam pam-devel
+yum install -y pkcs11-helper pkcs11-helper-devel
+rpm -qa lzolzo-devel openssl openssl-devel pam pam-devel pkcs11-helper pkcs11-helper-devel
+```
+
 ### 编译、安装
 ```shell
 cd openvpn-2.2.2
@@ -46,13 +53,6 @@ export KEY_PROVINCE="JIANGSU"           # 所在的省份
 export KEY_CITY="NANJING"               # 所在的城市
 export KEY_ORG="EVNBASE"                # 所在的组织
 export KEY_EMAIL="ENVBASE@126.com"      # 邮箱的地址
-```
-
-### 安装依赖
-```shell
-yum install -y lzo lzo-devel openssl openssl-devel pam pam-devel
-yum install -y pkcs11-helper pkcs11-helper-devel
-rpm -qa lzolzo-devel openssl openssl-devel pam pam-devel pkcs11-helper pkcs11-helper-devel
 ```
 
 ## 生成与配置证书
