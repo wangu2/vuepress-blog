@@ -103,6 +103,7 @@ cp server.conf client.conf /root/tools/openvpn-server/
 ```
 
 ## 配置 OpenVPN - Server.conf
+切换目录至 ```/root/tools/openvpn-server/```
 ```shell
 # 备份原文件
 cp server.conf server.conf_$(date +%F)
