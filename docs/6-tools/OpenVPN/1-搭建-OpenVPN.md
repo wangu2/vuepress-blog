@@ -17,18 +17,18 @@ VPN 直译就是虚拟专用通道，是提供给企业之间或者个人与公�
 - **Client 所需文件**：```client.key、client.csr、client.crt、ca.crt```
 - **下载地址**：[OpenVPN Server](http://oss.aliyuncs.com/aliyunecs/openvpn-2.2.2.tar.gz)、[OpenVPN Client](https://www.techspot.com/downloads/5182-openvpn.html)、[密码认证脚本](https://dl.t2.re/Others/OpenVPN/checkpsw.sh)
 
-### 下载
-```shell
-cd /root/tools
-wget http://oss.aliyuncs.com/aliyunecs/openvpn-2.2.2.tar.gz
-tar -zxvf openvpn-2.2.2.tar.gz
-```
-
 ### 安装依赖
 ```shell
 yum install -y lzo lzo-devel openssl openssl-devel pam pam-devel
 yum install -y pkcs11-helper pkcs11-helper-devel
 rpm -qa lzolzo-devel openssl openssl-devel pam pam-devel pkcs11-helper pkcs11-helper-devel
+```
+
+### 下载
+```shell
+cd /root/tools
+wget http://oss.aliyuncs.com/aliyunecs/openvpn-2.2.2.tar.gz
+tar -zxvf openvpn-2.2.2.tar.gz
 ```
 
 ### 编译、安装
