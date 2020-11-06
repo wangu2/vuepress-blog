@@ -124,29 +124,25 @@ ifconfig-pool-persist ipp.txt                       # 地址池记录文件位�
 keepalive 10 120                                    # 存活时间，10秒ping一次,120 如未收到响应则视为断线
 max-clients 100                                     # 最多允许100个客户端连接
 status openvpn-status.log                           # 日志记录位置
-verb 3                                              # OpenVPN 版本
+verb 3                                              # 日志级别等级
 client-to-client                                    # 客户端与客户端之间支持通信
 log /var/log/openvpn.log                            # OpenVPN 日志记录位置
 persist-key                                         # 通过 keepalive 检测超时后，重新启动 VPN，不重新读取 keys，保留第一次使用的 keys。
 persist-tun                                         # 检测超时后，重新启动VPN，一直保持 tun 是 linkup 的。否则网络会先 linkdown 然后再linkup
-duplicate-cn
+duplicate-cn                                        # 客户端使用相同的证书和密钥连接VPN，要打开这个选项，否则每个证书只允许一个人连接VPN
 ```
 
 ## 配置 iptables
 ### 配置 iptables 前，确保 iptables 已经开启否则无效
 ```shell
 yum install -y iptables-services        # 安装 iptables-service
-
-systemctl enable iptables               # iptables 启用
-iptables -F                             # iptables 清除规则 
-service iptables save                   # iptables 保存
-service iptables restart                # iptables 重启
-
-systemctl list-unit-files | grep iptables
 ```
 
 ### 清除 iptables 规则
+
 ```shell
+systemctl enable iptables       # iptables 启用
+
 iptables -F                     # 清除规则链中已有的条目
 iptables -X                     # 清除预设表filter中使用者自定链中的规则
 iptables -Z                     # 清空规则链中的数据包计算器和字节计数器
@@ -165,35 +161,6 @@ iptables -P FORWARD ACCEPT      # 接收处理转发数据包
 ```
 
 ### 添加 iptables 规则 
-#### 熟悉 iptables
-iptables 命令输入顺序
-> iptables -t 表名 <-A/I/D/R> 规则链名 [规则号] <-i/o 网卡名> -p 协议名 <-s 源IP/源子网> --sport 源端口 <-d 目标IP/目标子网> --dport 目标端口 -j 动作
-
-::: tip 表名包括：
-- raw：高级功能，如：网址过滤。
-- mangle：数据包修改（QOS），用于实现服务质量。
-- net：地址转换，用于网关路由器。
-- filter：包过滤，用于防火墙规则。
-:::
-
-::: tip 规则链名包括：
-  - INPUT链：处理输入数据包。
-  - OUTPUT链：处理输出数据包。
-  - PORWARD链：处理转发数据包。
-  - PREROUTING链：用于目标地址转换（DNAT）。
-  - POSTOUTING链：用于源地址转换（SNAT）。
-:::
-
-::: tip 动作包括：
-  - accept：接收数据包。
-  - DROP：丢弃数据包。
-  - REDIRECT：重定向、映射、透明代理。
-  - SNAT：源地址转换。
-  - DNAT：目标地址转换。
-  - MASQUERADE：IP伪装（NAT），用于ADSL。
-  - LOG：日志记录。
-:::
-
 #### OpenVPN 使用
 这里我们使用到的命令如下
 
@@ -204,9 +171,16 @@ iptables -t nat -I POSTROUTING -s 10.8.0.0/24 -o eth0 -j SNAT --to-source 172.19
 # 查看列表
 iptables -L -n -t nat
 
+# iptables 保存
+service iptables save
+
 # 服务器重启以应用
 service iptables restart
+
+# 查看状态
+systemctl list-unit-files | grep iptables
 ```
+
 ::: warning 重要: 防火墙一定要开启后再进行上述配置操作
 **10.8.0.0/24 为VPN分配的网段** <br/>
 **172.19.89.134 为当前 OpenVPN Server 安装的服务器 172.19 地址地址私有 ip**
@@ -236,9 +210,13 @@ ps -ef | grep openvpn
 Windows 环境，首先下载客户端 [OpenVPN Client](https://www.techspot.com/downloads/5182-openvpn.html)。<br/>
 
 1. 将服务器 ```/root/tools/openvpn-server``` 目录下的 ```client.key、client.csr、client.crt、ca.crt``` <br/>
-2. 下载(FTP)到 ```F:\Tools\OpenVPN``` (我本地安装目录) <br/>
-3. 创建 ```client.ovpn``` 文件，配置如下（修改 IP & cert & key 名称）
 
+2. 下载到 ```F:\Tools\OpenVPN``` (我本地安装目录) <br/>
+::: tip linux 下载文件或上传 (rz, sz 命令)
+yum -y install lrzsz 
+:::
+
+3. 创建 ```client.ovpn``` 文件，配置如下（修改 IP & cert & key 名称）
 
 ```shell
 client                              # 声明当前VPN是客户端
@@ -253,10 +231,12 @@ ca ca.crt                           # -- OpenVPN Server 服务器上拷贝下 ca
 cert mike.crt                       # -- OpenVPN Server 服务器上拷贝下 client.crt 文件
 key mike.key                        # -- OpenVPN Server 服务器上拷贝下 client.key 文件
 comp-lzo                            # 使用LZO压缩
-verb 2                              # OpenVPN 版本
+verb 2                              # 日志级别等级
+remote-cert-tls server
 ```
 
 4. 右击 Client 小锁菜单选择导入配置文件，选择上面创建的 ```client.ovpn```
+   
 5. 右击选择连接，此时 OpenVPN 会分配一个 ```10.8.0.0``` 网段的 IP 地址给本机。使用 ```ipconfig``` 进行查看
 
 > 小图标绿了，就代表他已经连接至 OpenVPN Server ( :alien: : 怎么就绿了 )
