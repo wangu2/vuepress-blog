@@ -153,7 +153,8 @@ module.exports = {
             ],
             '/6-tools/OpenVPN/':[
                 '1-搭建-OpenVPN',
-                '2-配置-OpenVPN密码认证'
+                '2-配置-OpenVPN密码认证',
+                '3-衍生问题'
             ]
         }
     }
