@@ -1,12 +1,6 @@
 # IoC容器设计及Spring源码
 
-## 主要内容
-- Spring 基础概述
-- Spring IoC、SpringAOP
-- Spring IoC 高级应用
-- Spring IoC 源码剖析
-- Spring AOP 高级应用
-- Spring AOP 源码剖析
+[[toc]]
 
 ## Spring 基础概述
 Spring 开源分层，轻量级开源框架，以 IoC、AOP 为内核。提供了展现层 SpringMVC 和业务层事务管理等总舵的企业级应用技术。
