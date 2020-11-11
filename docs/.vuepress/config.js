@@ -85,9 +85,11 @@ module.exports = {
             },{ 
                 text: '工具',
                 items:[
-                    { text: '集', link: '/6-tools/0-小工具集合' },
-                    { text: '搭建 OpenVPN', link: '/6-tools/OpenVPN/1-搭建-OpenVPN' }
+                    { text: '服务器搭建 OpenVPN', link: '/6-tools/OpenVPN/1-搭建-OpenVPN' }
                 ]
+            },{ 
+                text: '集',
+                link: '/6-tools/0-小工具集合'
             },{ 
                 text: '🏀', 
                 items:[{
