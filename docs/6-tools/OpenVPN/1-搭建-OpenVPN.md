@@ -2,6 +2,8 @@
 
 > 目前环境为多台阿里云的 ECS 服务器，系统为 CentOS
 
+[[toc]]
+
 ## OpenVPN - SSL协议
 VPN 直译就是虚拟专用通道，是提供给企业之间或者个人与公司之间安全数据传输的隧道 <br>
 [OpenVPN](https://github.com/OpenVPN/easy-rsa) 是一个基于 OpenSSL 库的应用层 VPN 实现。
