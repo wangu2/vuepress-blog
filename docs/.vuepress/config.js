@@ -127,7 +127,8 @@ module.exports = {
                 sidebarDepth:0,
                 children:[
                     'java-oop',
-                    'java-abc-interface'
+                    'java-abc-interface',
+                    'java-t-generic'
                 ]
             },{
                 title: '设计模式',
